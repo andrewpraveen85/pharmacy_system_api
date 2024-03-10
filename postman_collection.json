@@ -1,0 +1,732 @@
+{
+	"info": {
+		"_postman_id": "88fd135d-ba3d-4b7e-b585-f57b14355261",
+		"name": "interview",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "70369"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\": \"owner\",\r\n    \"password\": \"password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://api.pharmacy_system/api/login",
+							"protocol": "http",
+							"host": [
+								"api",
+								"pharmacy_system"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "6|axlGPqKdFkrWgUQ6B3A2BSJxkeSOGkFICIKnAFve3c66449b",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://api.pharmacy_system/api/logout",
+							"protocol": "http",
+							"host": [
+								"api",
+								"pharmacy_system"
+							],
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customers",
+			"item": [
+				{
+					"name": "getCustomers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "7|6d5IlT3FuN8ukFo8Bl9I5vN8LqYDmokKrKsDkMGq83265083",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.pharmacy_system/api/customers",
+							"protocol": "http",
+							"host": [
+								"api",
+								"pharmacy_system"
+							],
+							"path": [
+								"api",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getCustomer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "7|6d5IlT3FuN8ukFo8Bl9I5vN8LqYDmokKrKsDkMGq83265083",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.pharmacy_system/api/customer/2",
+							"protocol": "http",
+							"host": [
+								"api",
+								"pharmacy_system"
+							],
+							"path": [
+								"api",
+								"customer",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createCustomer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "7|6d5IlT3FuN8ukFo8Bl9I5vN8LqYDmokKrKsDkMGq83265083",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"name2\",\r\n    \"email\" : \"email2@email.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://api.pharmacy_system/api/customer",
+							"protocol": "http",
+							"host": [
+								"api",
+								"pharmacy_system"
+							],
+							"path": [
+								"api",
+								"customer"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateCustomer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "7|6d5IlT3FuN8ukFo8Bl9I5vN8LqYDmokKrKsDkMGq83265083",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"name11111\",\r\n    \"email\" : \"email1111@email.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://api.pharmacy_system/api/customer/1",
+							"protocol": "http",
+							"host": [
+								"api",
+								"pharmacy_system"
+							],
+							"path": [
+								"api",
+								"customer",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "softStatusCustomer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "7|6d5IlT3FuN8ukFo8Bl9I5vN8LqYDmokKrKsDkMGq83265083",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\" : \"0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://api.pharmacy_system/api/customer-status/2",
+							"protocol": "http",
+							"host": [
+								"api",
+								"pharmacy_system"
+							],
+							"path": [
+								"api",
+								"customer-status",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteCustomer",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "7|6d5IlT3FuN8ukFo8Bl9I5vN8LqYDmokKrKsDkMGq83265083",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://api.pharmacy_system/api/customer/2",
+							"protocol": "http",
+							"host": [
+								"api",
+								"pharmacy_system"
+							],
+							"path": [
+								"api",
+								"customer",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "getUsers",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "7|6d5IlT3FuN8ukFo8Bl9I5vN8LqYDmokKrKsDkMGq83265083",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.pharmacy_system/api/users",
+							"protocol": "http",
+							"host": [
+								"api",
+								"pharmacy_system"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "7|6d5IlT3FuN8ukFo8Bl9I5vN8LqYDmokKrKsDkMGq83265083",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.pharmacy_system/api/user/2",
+							"protocol": "http",
+							"host": [
+								"api",
+								"pharmacy_system"
+							],
+							"path": [
+								"api",
+								"user",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "7|6d5IlT3FuN8ukFo8Bl9I5vN8LqYDmokKrKsDkMGq83265083",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"name3\",\r\n    \"email\" : \"email3@email.com\",\r\n    \"role\" : 3,\r\n    \"username\" : \"username3\",\r\n    \"password\" : \"Some@password133\",\r\n    \"password_confirmation\" : \"Some@password133\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://api.pharmacy_system/api/users",
+							"protocol": "http",
+							"host": [
+								"api",
+								"pharmacy_system"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "7|6d5IlT3FuN8ukFo8Bl9I5vN8LqYDmokKrKsDkMGq83265083",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\" : \"name444\",\r\n    \"email\" : \"email4444@email.com\",\r\n    \"role\" : 3,\r\n    \"username\" : \"username444\",\r\n    \"password\" : \"Some@password444\",\r\n    \"password_confirmation\" : \"Some@password444\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://api.pharmacy_system/api/user/4",
+							"protocol": "http",
+							"host": [
+								"api",
+								"pharmacy_system"
+							],
+							"path": [
+								"api",
+								"user",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "softStatusUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "7|6d5IlT3FuN8ukFo8Bl9I5vN8LqYDmokKrKsDkMGq83265083",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\" : \"0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://api.pharmacy_system/api/user-status/4",
+							"protocol": "http",
+							"host": [
+								"api",
+								"pharmacy_system"
+							],
+							"path": [
+								"api",
+								"user-status",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "7|6d5IlT3FuN8ukFo8Bl9I5vN8LqYDmokKrKsDkMGq83265083",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://api.pharmacy_system/api/user/5",
+							"protocol": "http",
+							"host": [
+								"api",
+								"pharmacy_system"
+							],
+							"path": [
+								"api",
+								"user",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Medications",
+			"item": [
+				{
+					"name": "getMedications",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "7|6d5IlT3FuN8ukFo8Bl9I5vN8LqYDmokKrKsDkMGq83265083",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.pharmacy_system/api/medications",
+							"protocol": "http",
+							"host": [
+								"api",
+								"pharmacy_system"
+							],
+							"path": [
+								"api",
+								"medications"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getMedication",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "7|6d5IlT3FuN8ukFo8Bl9I5vN8LqYDmokKrKsDkMGq83265083",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://api.pharmacy_system/api/medication/2",
+							"protocol": "http",
+							"host": [
+								"api",
+								"pharmacy_system"
+							],
+							"path": [
+								"api",
+								"medication",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createMedication",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "6|axlGPqKdFkrWgUQ6B3A2BSJxkeSOGkFICIKnAFve3c66449b",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Capsule 3\",\r\n    \"description\":\"Capsule 3 Description\",\r\n    \"stock\":\"30\",\r\n    \"munit\":\"bottle\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://api.pharmacy_system/api/medication",
+							"protocol": "http",
+							"host": [
+								"api",
+								"pharmacy_system"
+							],
+							"path": [
+								"api",
+								"medication"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateMedication",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "7|6d5IlT3FuN8ukFo8Bl9I5vN8LqYDmokKrKsDkMGq83265083",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Capsule 20\",\r\n    \"description\":\"Capsule 20 Description\",\r\n    \"stock\":\"200\",\r\n    \"munit\":\"bottle\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://api.pharmacy_system/api/medication/2",
+							"protocol": "http",
+							"host": [
+								"api",
+								"pharmacy_system"
+							],
+							"path": [
+								"api",
+								"medication",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "softStatusMedication",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "7|6d5IlT3FuN8ukFo8Bl9I5vN8LqYDmokKrKsDkMGq83265083",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"status\" : \"0\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://api.pharmacy_system/api/medication-status/2",
+							"protocol": "http",
+							"host": [
+								"api",
+								"pharmacy_system"
+							],
+							"path": [
+								"api",
+								"medication-status",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteMedication",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "7|6d5IlT3FuN8ukFo8Bl9I5vN8LqYDmokKrKsDkMGq83265083",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://api.pharmacy_system/api/medication/2",
+							"protocol": "http",
+							"host": [
+								"api",
+								"pharmacy_system"
+							],
+							"path": [
+								"api",
+								"medication",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
