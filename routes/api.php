@@ -1,7 +1,7 @@
 <?php
-use App\Http\Controllers\ControllerAPISystem;
+use App\Http\Controllers\SystemController;
+use App\Http\Controllers\AuthendicController;
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,31 +14,31 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "api" middleware group. Make something great!
 |
 */
-Route::post('login', [ControllerAPISystem::class, 'login']);
+Route::post('login', [AuthendicController::class, 'login']);
 
 Route::group(['middleware' => 'auth:sanctum'], function() {
     // list all medication
-    Route::get('medication', [ControllerAPISystem::class, 'medication']);
+    Route::get('medication', [SystemController::class, 'medication']);
     // get a medication
-    Route::get('medication/{id}', [ControllerAPISystem::class, 'singleMedication']);
+    Route::get('medication/{id}', [SystemController::class, 'singleMedication']);
     // add a new medication
-    Route::post('medication', [ControllerAPISystem::class, 'createMedication']);
+    Route::post('medication', [SystemController::class, 'createMedication']);
     // updating a medication
-    Route::put('medication/{id}', [ControllerAPISystem::class, 'updateMedication']);
+    Route::put('medication/{id}', [SystemController::class, 'updateMedication']);
     // updating a medication
-    Route::put('medication-status/{id}', [ControllerAPISystem::class, 'softStatusMedication']);
+    Route::put('medication-status/{id}', [SystemController::class, 'softStatusMedication']);
     // delete a medication
-    Route::delete('medication/{id}', [ControllerAPISystem::class, 'deleteMedication']);
+    Route::delete('medication/{id}', [SystemController::class, 'deleteMedication']);
     // list all users
-    Route::get('users', [ControllerAPISystem::class, 'users']);
+    Route::get('users', [SystemController::class, 'users']);
     // get a user
-    Route::get('user/{id}', [ControllerAPISystem::class, 'singleUser']);
+    Route::get('user/{id}', [SystemController::class, 'singleUser']);
     // add a new user
-    Route::post('user', [ControllerAPISystem::class, 'createUser']);
+    Route::post('user', [SystemController::class, 'createUser']);
     // updating a user
-    Route::put('user/{id}', [ControllerAPISystem::class, 'updateUser']);
+    Route::put('user/{id}', [SystemController::class, 'updateUser']);
     // updating a user
-    Route::put('user-status/{id}', [ControllerAPISystem::class, 'softStatusUser']);
+    Route::put('user-status/{id}', [SystemController::class, 'softStatusUser']);
     // delete a user
-    Route::delete('users/{id}', [ControllerAPISystem::class, 'deleteUser']);
+    Route::delete('users/{id}', [SystemController::class, 'deleteUser']);
 });

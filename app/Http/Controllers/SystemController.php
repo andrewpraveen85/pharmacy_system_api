@@ -9,10 +9,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\JsonResponse;
-use Illuminate\Support\Str;
-use Illuminate\Support\Facades\Auth;
 
-class ControllerAPISystem extends Controller
+class SystemController extends Controller
 {
     use ApiHelpers;
 
@@ -206,27 +204,5 @@ class ControllerAPISystem extends Controller
         }
         return $this->onError(401, 'Unauthorized Access');
     }
-    public function login(Request $request): JsonResponse
-    {
-        $fields = $request->validate([
-            'username' => 'required',
-            'password' => 'required',
-        ]);
-
-        $user = User::where('username', $fields['username'])->first();
-
-        if (!$user || !Hash::check($fields['password'], $user->password)) {
-            return $this->onError(404, 'User Not Found');
-        }
-        if($user->role== 1){
-            $token = $user->createToken('auth_token', ['admin'])->plainTextToken;
-        }
-        if($user->role== 2){
-            $token = $user->createToken('auth_token', ['manager'])->plainTextToken;
-        }
-        if($user->role== 3){
-            $token = $user->createToken('auth_token', ['cashier'])->plainTextToken;
-        }
-        return $this->onSuccess($token, 'Login Success');
-    }
+    
 }
