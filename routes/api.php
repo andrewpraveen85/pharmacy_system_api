@@ -52,7 +52,7 @@ Route::group(['middleware' => 'auth:sanctum'], function() {
     // updating a user
     Route::put('user-status/{id}', [SystemController::class, 'softStatusUser']);
     // delete a user
-    Route::delete('users/{id}', [SystemController::class, 'deleteUser']);
+    Route::delete('user/{id}', [SystemController::class, 'deleteUser']);
     // logout a user
     Route::post('logout', [SystemController::class, 'logout']);
 });
