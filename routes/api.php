@@ -29,7 +29,6 @@ Route::group(['middleware' => 'auth:sanctum'], function() {
     Route::put('medication-status/{id}', [SystemController::class, 'softStatusMedication']);
     // delete a medication
     Route::delete('medication/{id}', [SystemController::class, 'deleteMedication']);
-    
     // list all customer
     Route::get('customers', [SystemController::class, 'customers']);
     // get a medication
@@ -42,7 +41,6 @@ Route::group(['middleware' => 'auth:sanctum'], function() {
     Route::put('customer-status/{id}', [SystemController::class, 'softStatusCustomer']);
     // delete a medication
     Route::delete('customer/{id}', [SystemController::class, 'deleteCustomer']);
-    
     // list all users
     Route::get('users', [SystemController::class, 'users']);
     // get a user

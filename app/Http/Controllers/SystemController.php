@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Http\Library\ApiHelpers;
 use App\Models\Medication;
 use App\Models\User;
+use App\Models\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
