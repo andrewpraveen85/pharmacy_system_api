@@ -69,6 +69,14 @@ trait ApiHelpers
             'password' => ['required', 'string', 'min:8', 'confirmed'],
         ];
     }
+    
+    protected function customerValidatedRules(): array
+    {
+        return [
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:customers'],
+        ];
+    }
 
     protected function softStatusValidationRules(): array
     {

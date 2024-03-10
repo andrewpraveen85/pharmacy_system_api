@@ -18,7 +18,7 @@ Route::post('login', [AuthendicController::class, 'login']);
 
 Route::group(['middleware' => 'auth:sanctum'], function() {
     // list all medication
-    Route::get('medication', [SystemController::class, 'medication']);
+    Route::get('medications', [SystemController::class, 'medications']);
     // get a medication
     Route::get('medication/{id}', [SystemController::class, 'singleMedication']);
     // add a new medication
@@ -29,6 +29,20 @@ Route::group(['middleware' => 'auth:sanctum'], function() {
     Route::put('medication-status/{id}', [SystemController::class, 'softStatusMedication']);
     // delete a medication
     Route::delete('medication/{id}', [SystemController::class, 'deleteMedication']);
+    
+    // list all customer
+    Route::get('customers', [SystemController::class, 'customers']);
+    // get a medication
+    Route::get('customer/{id}', [SystemController::class, 'singleCustomer']);
+    // add a new medication
+    Route::post('customer', [SystemController::class, 'createCustomer']);
+    // updating a medication
+    Route::put('customer/{id}', [SystemController::class, 'updateCustomer']);
+    // updating a medication
+    Route::put('customer-status/{id}', [SystemController::class, 'softStatusCustomer']);
+    // delete a medication
+    Route::delete('customer/{id}', [SystemController::class, 'deleteCustomer']);
+    
     // list all users
     Route::get('users', [SystemController::class, 'users']);
     // get a user
@@ -41,4 +55,6 @@ Route::group(['middleware' => 'auth:sanctum'], function() {
     Route::put('user-status/{id}', [SystemController::class, 'softStatusUser']);
     // delete a user
     Route::delete('users/{id}', [SystemController::class, 'deleteUser']);
+    // logout a user
+    Route::post('logout', [SystemController::class, 'logout']);
 });

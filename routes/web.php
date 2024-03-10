@@ -34,11 +34,3 @@ Route::get('dashboard', function () {
     return redirect("/");
 
 })->middleware('auth');
-
-Route::get('clear/token', function () {
-    if(Auth::check() && Auth::user()->role === 1) {
-        Auth::user()->tokens()->delete();
-    }
-
-    return 'Token Cleared';
-})->middleware('auth');
